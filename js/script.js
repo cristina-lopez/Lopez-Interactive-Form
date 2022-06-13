@@ -21,9 +21,6 @@ jobTitle.addEventListener('change', (e) => {
  let shirtColor = document.getElementById('color');
  let designChoice = document.querySelector('#design');
  let colorOptions = document.querySelectorAll('#color option');;
- console.log(shirtColor);
- console.log(designChoice);
- console.log(colorOptions);
  shirtColor.disabled = true;
 
  designChoice.addEventListener('change', (e) => {
@@ -42,4 +39,22 @@ jobTitle.addEventListener('change', (e) => {
             colorOptions[i].removeAttribute('selected');
         }
     }
+ });
+
+ // Step 6 - updates total cost depending on selections
+ //let checkboxes = document.querySelectorAll('.activities input');
+ let activitiesFieldset = document.querySelector('.activities');
+ let totalCostDisplay = document.querySelector('.activities-cost');
+ let totalCost = 0;
+
+ activitiesFieldset.addEventListener('change', (e) => {
+    e.preventDefault();
+    const dataCost = parseInt(e.target.getAttribute('data-cost'));
+    if (e.target.checked) {
+        totalCost += dataCost;
+    } else if (!(e.target.checked)) {
+        totalCost -= dataCost;
+    }
+
+    totalCostDisplay.innerHTML = `Total Cost: $${totalCost}`;
  });
