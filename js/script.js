@@ -198,9 +198,7 @@ formElement.addEventListener('submit', (e) => {
 // Accessibility - puts focus on the activities checkboxes
 let checkboxes = document.querySelectorAll('input[type=checkbox]');
 for (let i=0; i < checkboxes.length; i++) {
-    //console.log("yes");
     checkboxes[i].addEventListener('focus', (e) => {
-        //console.log("activitated");
         checkboxes[i].parentElement.classList = "focus";
     });
     checkboxes[i].addEventListener('blur', (e) => {
