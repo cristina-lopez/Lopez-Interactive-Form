@@ -1,6 +1,7 @@
 // Variables
 // for Name section
 let nameElement = document.querySelector('#name');
+console.log(nameElement);
 // for email validation
 let emailInput = document.querySelector('#email');
 // for Job section
